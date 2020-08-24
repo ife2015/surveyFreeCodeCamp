@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Survey Form</title>
+    <style>
+      body {
+        font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+        color: white; 
+        background-image: 
+        linear-gradient( rgba(77, 25, 232, 0.5), rgba(62, 11, 113, 0.5) ),
+        url(teacher.jpg);
+        background-repeat: no-repeat;
+       
+
+      }
+      #survey-form {
+        position: relative; 
+        border: inset 1px rgba(25, 25, 128,0.5);
+        border-style:inset;
+        border-radius: 10px;
+        margin: 30px 200px;
+        min-width: 600px;
+        background: rgba(25, 25, 128,0.5);
+      }
+
+      #title{
+        text-align: center;
+        position: relative;
+        font-family:Tahoma, Sans-Serif;       
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      #description {
+        text-align: center;
+        font-family: Tahoma, Sans-Serif;
+        margin-bottom: 5px; 
+        margin-top: 0px;
+        padding: 0px 0px;
+      }
+
+      .email-label, .name-label, .number-label, .label-para{
+        font-family:'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+        margin-bottom: 2px;
+        margin-left: 20px;
+        margin-right: 20px;;
+        padding: 2px 0px;
+      }
+
+      [type = text], [type=email],[type=number], [type=email], #dropdown{
+        margin-left: 20px;
+        width:92%;
+        border-style:solid;
+        border-width: 1px;
+        border-color: black;
+        height: 30px;
+        border-radius: 5px;
+      }
+
+      [type=checkbbox] {
+        line-break: 500px;
+      }
+
+      [type=radio], [type=checkbox] {
+        margin-left: 20px;
+      }
+
+      input[type=checkbox], input[type=radio] {
+        transform: scale(1.2);
+      }
+      
+      .small-font {
+        font-family: Tahoma, Sans-Serif;
+        font-size: 13px;
+      }
+
+      ::placeholder {
+        padding: 5px;
+        margin: 0px;
+        text-align: left;
+      }
+      #textarea {
+        margin-left: 20px;
+        min-width: 92%;
+        max-width: 92%;
+        border-radius: 5px;
+        min-height: 150px;
+        max-height: 300px;
+      }
+
+      #submit {
+        display: block;
+        color: white;
+        border-radius: 5px;
+        margin: 30px auto;
+        background-color: rgb(56, 177, 56); 
+        padding: 20px auto 20px auto;
+        width: 90%;
+        height: 40px;
+      } 
+      #dropdown {
+        color:rgba(0, 0, 0, 0.6);
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">freeCodeCamp Survey Form</h1>
+      <p id="description"><em>Thank you for taking the time to help us improve the platform</em></p>
+    </header>
+  
+    <main>
+      <form id="survey-form">
+        <p class="name-label">Name</p> 
+        <input id="name" type="text" name="name" placeholder="Enter your name" required> 
+      
+        <p class="email-label">Email</p> 
+        <input id="email" type="email" name="email" placeholder="Enter your Email" required>
+      
+        <p class="number-label">Age <span class="small-font">(optional)</span></p> 
+        <input id="number" type="number" placeholder="Age" name="age" min="10" max="99" required>  
+  
+        <p class="label-para">Which option best describes your current role?</p>
+        <select id="dropdown" name="dropdown-menu" placeholder="Select current role">
+          <option value="" disabled selected>Select an option</option>
+          <option value="Student">Student</option>
+          <option value="Full Time Job">Full Time Job</option>
+          <option value="Full Time Learner">Full Time Learner</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+          <option value="Other">Other</option>
+        </select>
+  
+        <p class="label-para">Would you recommend freeCodeCamp to a friend?</p>
+        <label><input type="radio" name="choice" value="Definitely" required>Definitely</label> <br>
+        <label><input type="radio" name="choice" value="Maybe" required>Maybe</label> <br>
+        <label><input type="radio" name="choice" value="Not sure" required>Not sure</label>
+  
+        <p class="label-para">What would you like to see improved? <span class="small-font">(Check all that apply)</span></p>
+        <label><input type="checkbox" value="Front-end Projects" name="set">Front-end Projects</label> <br>
+        <label><input type="checkbox" value="Back-end Projects" name="set">Back-end Projects</label> <br>
+        <label><input type="checkbox" value="Data Visualization" name="set">Data Visualization</label> <br>
+        <label><input type="checkbox" value="Challenges" name="set">Challenges</label> <br> 
+        <label><input type="checkbox" value="Open Source Community" name="set">Open Source Community</label> <br> 
+        <label><input type="checkbox" value="Gitter help rooms" name="set">Gitter help rooms</label><br> 
+        <label><input type="checkbox" value="Videos" name="set">Videos</label><br> 
+        <label><input type="checkbox" value="City Meetups" name="set">City Meetups</label><br> 
+        <label><input type="checkbox" value="Wiki" name="set">Wiki</label><br> 
+        <label><input type="checkbox" value="Forum" name="set">Forum</label><br> 
+        <label><input type="checkbox" value="Additional Courses" name="set">Additional Courses</label>
+  
+        <p class="label-para">Any comments or suggestions?</p>
+        <textarea  id="textarea" rows="4" cols="50" placeholder="Enter your comment here..."></textarea>
+        
+        <button id="submit" type="submit">Submit</button>
+  
+      </form>
+    </main>
+  </body>
+  
+  </html>
